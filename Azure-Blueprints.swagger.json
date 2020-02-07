@@ -1,0 +1,2708 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Azure Blueprints",
+    "description": "Azure Blueprints enables the creation of an Azure native package of artifacts (resource groups, policies, role assignments, Resource Manager templates and more) that can be dynamically deployed to subscriptions to create consistent, repeatable environments.",
+    "version": "1.0"
+  },
+  "host": "management.azure.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/{scope}/providers/Microsoft.Blueprint/blueprintAssignments/{assignmentName}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "identity": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "type"
+                    },
+                    "tenantId": {
+                      "type": "string",
+                      "description": "tenantId"
+                    },
+                    "principalId": {
+                      "type": "string",
+                      "description": "principalId"
+                    }
+                  },
+                  "description": "identity"
+                },
+                "location": {
+                  "type": "string",
+                  "description": "location"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "provisioningState": {
+                      "type": "string",
+                      "description": "provisioningState"
+                    },
+                    "blueprintId": {
+                      "type": "string",
+                      "description": "blueprintId"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        },
+                        "costCenter": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "costCenter"
+                        },
+                        "owners": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "description": "value"
+                            }
+                          },
+                          "description": "owners"
+                        }
+                      },
+                      "description": "parameters"
+                    },
+                    "resourceGroups": {
+                      "type": "object",
+                      "properties": {
+                        "storageRG": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "description": "name"
+                            },
+                            "location": {
+                              "type": "string",
+                              "description": "location"
+                            }
+                          },
+                          "description": "storageRG"
+                        }
+                      },
+                      "description": "resourceGroups"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Assignments - Get",
+        "description": "Get a blueprint assignment.",
+        "operationId": "GetAssignments",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource.",
+            "x-ms-summary": ""
+          },
+          {
+            "name": "assignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint assignment.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "description": "Client API Version.",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "202": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "identity": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "type"
+                    },
+                    "tenantId": {
+                      "type": "string",
+                      "description": "tenantId"
+                    },
+                    "principalId": {
+                      "type": "string",
+                      "description": "principalId"
+                    }
+                  },
+                  "description": "identity"
+                },
+                "location": {
+                  "type": "string",
+                  "description": "location"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "provisioningState": {
+                      "type": "string",
+                      "description": "provisioningState"
+                    },
+                    "blueprintId": {
+                      "type": "string",
+                      "description": "blueprintId"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        },
+                        "costCenter": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "costCenter"
+                        },
+                        "owners": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "description": "value"
+                            }
+                          },
+                          "description": "owners"
+                        }
+                      },
+                      "description": "parameters"
+                    },
+                    "resourceGroups": {
+                      "type": "object",
+                      "properties": {
+                        "storageRG": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "description": "name"
+                            },
+                            "location": {
+                              "type": "string",
+                              "description": "location"
+                            }
+                          },
+                          "description": "storageRG"
+                        }
+                      },
+                      "description": "resourceGroups"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Assignments - Delete",
+        "description": "Delete a blueprint assignment.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The scope of the resource.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "assignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "Name of the blueprint assignment."
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal"
+          }
+        ],
+        "operationId": "DeleteAssignments"
+      },
+      "put": {
+        "responses": {
+          "201": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "identity": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "type"
+                    },
+                    "tenantId": {
+                      "type": "string",
+                      "description": "tenantId"
+                    },
+                    "principalId": {
+                      "type": "string",
+                      "description": "principalId"
+                    }
+                  },
+                  "description": "identity"
+                },
+                "location": {
+                  "type": "string",
+                  "description": "location"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "provisioningState": {
+                      "type": "string",
+                      "description": "provisioningState"
+                    },
+                    "blueprintId": {
+                      "type": "string",
+                      "description": "blueprintId"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        },
+                        "costCenter": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "costCenter"
+                        },
+                        "owners": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "description": "value"
+                            }
+                          },
+                          "description": "owners"
+                        }
+                      },
+                      "description": "parameters"
+                    },
+                    "resourceGroups": {
+                      "type": "object",
+                      "properties": {
+                        "storageRG": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "description": "name"
+                            },
+                            "location": {
+                              "type": "string",
+                              "description": "location"
+                            }
+                          },
+                          "description": "storageRG"
+                        }
+                      },
+                      "description": "resourceGroups"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Assignments - Create Or Update",
+        "operationId": "CreateOrUpdateAssignments",
+        "description": "Create or update a blueprint assignment.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "assignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint assignment."
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "description": "Client API Version."
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprintAssignments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "identity": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "type"
+                          },
+                          "tenantId": {
+                            "type": "string",
+                            "description": "tenantId"
+                          },
+                          "principalId": {
+                            "type": "string",
+                            "description": "principalId"
+                          }
+                        },
+                        "description": "identity"
+                      },
+                      "location": {
+                        "type": "string",
+                        "description": "location"
+                      },
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "description": {
+                            "type": "string",
+                            "description": "description"
+                          },
+                          "provisioningState": {
+                            "type": "string",
+                            "description": "provisioningState"
+                          },
+                          "blueprintId": {
+                            "type": "string",
+                            "description": "blueprintId"
+                          },
+                          "parameters": {
+                            "type": "object",
+                            "properties": {
+                              "storageAccountType": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "description": "value"
+                                  }
+                                },
+                                "description": "storageAccountType"
+                              },
+                              "costCenter": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "description": "value"
+                                  }
+                                },
+                                "description": "costCenter"
+                              },
+                              "owners": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "description": "value"
+                                  }
+                                },
+                                "description": "owners"
+                              }
+                            },
+                            "description": "parameters"
+                          },
+                          "resourceGroups": {
+                            "type": "object",
+                            "properties": {
+                              "storageRG": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "description": "name"
+                                  },
+                                  "location": {
+                                    "type": "string",
+                                    "description": "location"
+                                  }
+                                },
+                                "description": "storageRG"
+                              }
+                            },
+                            "description": "resourceGroups"
+                          }
+                        },
+                        "description": "properties"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "type"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Assignments - List",
+        "description": "List blueprint assignments within a subscription.",
+        "operationId": "ListAssignments",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The scope of the resource.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprintAssignments/{assignmentName}/WhoIsBlueprint": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "objectId": {
+                  "type": "string",
+                  "description": "objectId"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Assignments - Who Is Blueprint",
+        "operationId": "WhoIsBlueprintAssignments",
+        "description": "Get Blueprints service SPN objectId",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The scope of the resource.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "assignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint assignment.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprints/{blueprintName}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        },
+                        "costCenter": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "costCenter"
+                        },
+                        "owners": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "owners"
+                        }
+                      },
+                      "description": "parameters"
+                    },
+                    "resourceGroups": {
+                      "type": "object",
+                      "properties": {
+                        "storageRG": {
+                          "type": "object",
+                          "properties": {
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "description"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "storageRG"
+                        }
+                      },
+                      "description": "resourceGroups"
+                    },
+                    "targetScope": {
+                      "type": "string",
+                      "description": "targetScope"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "status"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Blueprints - Get",
+        "operationId": "GetBlueprints",
+        "description": "Get a blueprint definition.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "Name of the blueprint definition."
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        },
+                        "costCenter": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "costCenter"
+                        },
+                        "owners": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "owners"
+                        }
+                      },
+                      "description": "parameters"
+                    },
+                    "resourceGroups": {
+                      "type": "object",
+                      "properties": {
+                        "storageRG": {
+                          "type": "object",
+                          "properties": {
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "description"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "storageRG"
+                        }
+                      },
+                      "description": "resourceGroups"
+                    },
+                    "targetScope": {
+                      "type": "string",
+                      "description": "targetScope"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "status"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Blueprints - Delete",
+        "operationId": "DeleteBlueprints",
+        "description": "Delete a blueprint definition.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The scope of the resource.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint definition.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "201": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "description": "description"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "description"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        },
+                        "costCenter": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "description"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "costCenter"
+                        },
+                        "owners": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "description"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "owners"
+                        }
+                      },
+                      "description": "parameters"
+                    },
+                    "resourceGroups": {
+                      "type": "object",
+                      "properties": {
+                        "storageRG": {
+                          "type": "object",
+                          "properties": {
+                            "metadata": {
+                              "type": "object",
+                              "properties": {
+                                "displayName": {
+                                  "type": "string",
+                                  "description": "displayName"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "description"
+                                }
+                              },
+                              "description": "metadata"
+                            }
+                          },
+                          "description": "storageRG"
+                        }
+                      },
+                      "description": "resourceGroups"
+                    },
+                    "targetScope": {
+                      "type": "string",
+                      "description": "targetScope"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Blueprints - Create Or Update",
+        "operationId": "CreateOrUpdateBlueprints",
+        "description": "Create or update a blueprint definition.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint definition.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "description": "Client API Version."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-ms-visibility": "important"
+            },
+            "x-ms-visibility": "important"
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprints": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "description": {
+                            "type": "string",
+                            "description": "description"
+                          },
+                          "parameters": {
+                            "type": "object",
+                            "properties": {
+                              "storageAccountType": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "description": "type"
+                                  },
+                                  "metadata": {
+                                    "type": "object",
+                                    "properties": {
+                                      "displayName": {
+                                        "type": "string",
+                                        "description": "displayName"
+                                      }
+                                    },
+                                    "description": "metadata"
+                                  }
+                                },
+                                "description": "storageAccountType"
+                              },
+                              "costCenter": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "description": "type"
+                                  },
+                                  "metadata": {
+                                    "type": "object",
+                                    "properties": {
+                                      "displayName": {
+                                        "type": "string",
+                                        "description": "displayName"
+                                      }
+                                    },
+                                    "description": "metadata"
+                                  }
+                                },
+                                "description": "costCenter"
+                              },
+                              "owners": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "description": "type"
+                                  },
+                                  "metadata": {
+                                    "type": "object",
+                                    "properties": {
+                                      "displayName": {
+                                        "type": "string",
+                                        "description": "displayName"
+                                      }
+                                    },
+                                    "description": "metadata"
+                                  }
+                                },
+                                "description": "owners"
+                              }
+                            },
+                            "description": "parameters"
+                          },
+                          "resourceGroups": {
+                            "type": "object",
+                            "properties": {
+                              "storageRG": {
+                                "type": "object",
+                                "properties": {
+                                  "metadata": {
+                                    "type": "object",
+                                    "properties": {
+                                      "displayName": {
+                                        "type": "string",
+                                        "description": "displayName"
+                                      },
+                                      "description": {
+                                        "type": "string",
+                                        "description": "description"
+                                      }
+                                    },
+                                    "description": "metadata"
+                                  }
+                                },
+                                "description": "storageRG"
+                              }
+                            },
+                            "description": "resourceGroups"
+                          },
+                          "targetScope": {
+                            "type": "string",
+                            "description": "targetScope"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "status"
+                          }
+                        },
+                        "description": "properties"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "type"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Blueprints - List",
+        "operationId": "ListBlueprints",
+        "description": "List blueprint definitions.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprints/{blueprintName}/artifacts": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "displayName": {
+                            "type": "string",
+                            "description": "displayName"
+                          },
+                          "roleDefinitionId": {
+                            "type": "string",
+                            "description": "roleDefinitionId"
+                          },
+                          "principalIds": {
+                            "type": "string",
+                            "description": "principalIds"
+                          },
+                          "policyDefinitionId": {
+                            "type": "string",
+                            "description": "policyDefinitionId"
+                          },
+                          "parameters": {
+                            "type": "object",
+                            "properties": {
+                              "tagName": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "description": "value"
+                                  }
+                                },
+                                "description": "tagName"
+                              },
+                              "tagValue": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "description": "value"
+                                  }
+                                },
+                                "description": "tagValue"
+                              },
+                              "storageAccountType": {
+                                "type": "object",
+                                "properties": {
+                                  "value": {
+                                    "type": "string",
+                                    "description": "value"
+                                  }
+                                },
+                                "description": "storageAccountType"
+                              }
+                            },
+                            "description": "parameters"
+                          },
+                          "template": {
+                            "type": "object",
+                            "properties": {
+                              "contentVersion": {
+                                "type": "string",
+                                "description": "contentVersion"
+                              },
+                              "parameters": {
+                                "type": "object",
+                                "properties": {
+                                  "storageAccountType": {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "description": "type"
+                                      },
+                                      "defaultValue": {
+                                        "type": "string",
+                                        "description": "defaultValue"
+                                      },
+                                      "allowedValues": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "description": "allowedValues"
+                                      },
+                                      "metadata": {
+                                        "type": "object",
+                                        "properties": {
+                                          "description": {
+                                            "type": "string",
+                                            "description": "description"
+                                          }
+                                        },
+                                        "description": "metadata"
+                                      }
+                                    },
+                                    "description": "storageAccountType"
+                                  }
+                                },
+                                "description": "parameters"
+                              },
+                              "variables": {
+                                "type": "object",
+                                "properties": {
+                                  "storageAccountName": {
+                                    "type": "string",
+                                    "description": "storageAccountName"
+                                  }
+                                },
+                                "description": "variables"
+                              },
+                              "resources": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "description": "type"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "description": "name"
+                                    },
+                                    "apiVersion": {
+                                      "type": "string",
+                                      "description": "apiVersion"
+                                    },
+                                    "location": {
+                                      "type": "string",
+                                      "description": "location"
+                                    },
+                                    "sku": {
+                                      "type": "object",
+                                      "properties": {
+                                        "name": {
+                                          "type": "string",
+                                          "description": "name"
+                                        }
+                                      },
+                                      "description": "sku"
+                                    },
+                                    "kind": {
+                                      "type": "string",
+                                      "description": "kind"
+                                    },
+                                    "properties": {
+                                      "type": "object",
+                                      "properties": {},
+                                      "description": "properties"
+                                    }
+                                  }
+                                },
+                                "description": "resources"
+                              },
+                              "outputs": {
+                                "type": "object",
+                                "properties": {
+                                  "storageAccountName": {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "description": "type"
+                                      },
+                                      "value": {
+                                        "type": "string",
+                                        "description": "value"
+                                      }
+                                    },
+                                    "description": "storageAccountName"
+                                  }
+                                },
+                                "description": "outputs"
+                              }
+                            },
+                            "description": "template"
+                          },
+                          "resourceGroup": {
+                            "type": "string",
+                            "description": "resourceGroup"
+                          }
+                        },
+                        "description": "properties"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "description": "kind"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "type"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Artifacts - List",
+        "operationId": "ListArtifacts",
+        "description": "List artifacts for a given blueprint definition.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "Name of the blueprint definition."
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "x-ms-summary": "",
+            "description": "Client API Version."
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprints/{blueprintName}/artifacts/{artifactName}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "template": {
+                      "type": "object",
+                      "properties": {
+                        "contentVersion": {
+                          "type": "string",
+                          "description": "contentVersion"
+                        },
+                        "parameters": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountType": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "description": "type"
+                                },
+                                "defaultValue": {
+                                  "type": "string",
+                                  "description": "defaultValue"
+                                },
+                                "allowedValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "description": "allowedValues"
+                                },
+                                "metadata": {
+                                  "type": "object",
+                                  "properties": {
+                                    "description": {
+                                      "type": "string",
+                                      "description": "description"
+                                    }
+                                  },
+                                  "description": "metadata"
+                                }
+                              },
+                              "description": "storageAccountType"
+                            }
+                          },
+                          "description": "parameters"
+                        },
+                        "variables": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountName": {
+                              "type": "string",
+                              "description": "storageAccountName"
+                            }
+                          },
+                          "description": "variables"
+                        },
+                        "resources": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "description": "type"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              },
+                              "apiVersion": {
+                                "type": "string",
+                                "description": "apiVersion"
+                              },
+                              "location": {
+                                "type": "string",
+                                "description": "location"
+                              },
+                              "sku": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "description": "name"
+                                  }
+                                },
+                                "description": "sku"
+                              },
+                              "kind": {
+                                "type": "string",
+                                "description": "kind"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {},
+                                "description": "properties"
+                              }
+                            }
+                          },
+                          "description": "resources"
+                        },
+                        "outputs": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountName": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "description": "type"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "description": "value"
+                                }
+                              },
+                              "description": "storageAccountName"
+                            }
+                          },
+                          "description": "outputs"
+                        }
+                      },
+                      "description": "template"
+                    },
+                    "resourceGroup": {
+                      "type": "string",
+                      "description": "resourceGroup"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        }
+                      },
+                      "description": "parameters"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "kind"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Artifacts - Get",
+        "operationId": "GetArtifacts",
+        "description": "Get a blueprint artifact.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "x-ms-summary": "",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "Name of the blueprint definition."
+          },
+          {
+            "name": "artifactName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint artifact.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "description": "Client API Version."
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "template": {
+                      "type": "object",
+                      "properties": {
+                        "contentVersion": {
+                          "type": "string",
+                          "description": "contentVersion"
+                        },
+                        "parameters": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountType": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "description": "type"
+                                },
+                                "defaultValue": {
+                                  "type": "string",
+                                  "description": "defaultValue"
+                                },
+                                "allowedValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "description": "allowedValues"
+                                },
+                                "metadata": {
+                                  "type": "object",
+                                  "properties": {
+                                    "description": {
+                                      "type": "string",
+                                      "description": "description"
+                                    }
+                                  },
+                                  "description": "metadata"
+                                }
+                              },
+                              "description": "storageAccountType"
+                            }
+                          },
+                          "description": "parameters"
+                        },
+                        "variables": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountName": {
+                              "type": "string",
+                              "description": "storageAccountName"
+                            }
+                          },
+                          "description": "variables"
+                        },
+                        "resources": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "description": "type"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              },
+                              "apiVersion": {
+                                "type": "string",
+                                "description": "apiVersion"
+                              },
+                              "location": {
+                                "type": "string",
+                                "description": "location"
+                              },
+                              "sku": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "description": "name"
+                                  }
+                                },
+                                "description": "sku"
+                              },
+                              "kind": {
+                                "type": "string",
+                                "description": "kind"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {},
+                                "description": "properties"
+                              }
+                            }
+                          },
+                          "description": "resources"
+                        },
+                        "outputs": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountName": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "description": "type"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "description": "value"
+                                }
+                              },
+                              "description": "storageAccountName"
+                            }
+                          },
+                          "description": "outputs"
+                        }
+                      },
+                      "description": "template"
+                    },
+                    "resourceGroup": {
+                      "type": "string",
+                      "description": "resourceGroup"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        }
+                      },
+                      "description": "parameters"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "kind"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "default",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Artifacts - Delete",
+        "operationId": "DeleteArtifacts",
+        "description": "Delete a blueprint artifact.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The scope of the resource.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint definition.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "artifactName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint artifact.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "description": "Client API Version."
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Artifacts - Create Or Update",
+        "description": "Create or update blueprint artifact.",
+        "operationId": "CreateOrUpdateArtifacts",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint definition.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "artifactName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint artifact.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "description": "Client API Version."
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "x-ms-visibility": "important"
+            },
+            "x-ms-visibility": "important"
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprintAssignments/{assignmentName}/assignmentOperations": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "type"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "blueprintVersion": {
+                            "type": "string",
+                            "description": "blueprintVersion"
+                          },
+                          "assignmentState": {
+                            "type": "string",
+                            "description": "assignmentState"
+                          },
+                          "timeCreated": {
+                            "type": "string",
+                            "description": "timeCreated"
+                          },
+                          "timeStarted": {
+                            "type": "string",
+                            "description": "timeStarted"
+                          },
+                          "timeFinished": {
+                            "type": "string",
+                            "description": "timeFinished"
+                          },
+                          "deployments": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "kind": {
+                                  "type": "string",
+                                  "description": "kind"
+                                },
+                                "action": {
+                                  "type": "string",
+                                  "description": "action"
+                                },
+                                "jobState": {
+                                  "type": "string",
+                                  "description": "jobState"
+                                },
+                                "requestUri": {
+                                  "type": "string",
+                                  "description": "requestUri"
+                                },
+                                "result": {
+                                  "type": "object",
+                                  "properties": {
+                                    "resources": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "string",
+                                            "description": "id"
+                                          },
+                                          "name": {
+                                            "type": "string",
+                                            "description": "name"
+                                          },
+                                          "type": {
+                                            "type": "string",
+                                            "description": "type"
+                                          }
+                                        }
+                                      },
+                                      "description": "resources"
+                                    }
+                                  },
+                                  "description": "result"
+                                },
+                                "history": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "error": {
+                                        "type": "object",
+                                        "properties": {
+                                          "code": {
+                                            "type": "string",
+                                            "description": "code"
+                                          },
+                                          "message": {
+                                            "type": "string",
+                                            "description": "message"
+                                          }
+                                        },
+                                        "description": "error"
+                                      }
+                                    }
+                                  },
+                                  "description": "history"
+                                }
+                              }
+                            },
+                            "description": "deployments"
+                          }
+                        },
+                        "description": "properties"
+                      }
+                    }
+                  },
+                  "description": "value"
+                },
+                "nextLink": {
+                  "type": "string",
+                  "description": "nextLink"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Assignment Operations - List",
+        "operationId": "ListAssignmentOperations",
+        "description": "List operations for given blueprint assignment within a subscription.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The scope of the resource.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "assignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint assignment.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "description": "Client API Version."
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprintAssignments/{assignmentName}/assignmentOperations/{assignmentOperationName}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "blueprintVersion": {
+                      "type": "string",
+                      "description": "blueprintVersion"
+                    },
+                    "assignmentState": {
+                      "type": "string",
+                      "description": "assignmentState"
+                    },
+                    "timeCreated": {
+                      "type": "string",
+                      "description": "timeCreated"
+                    },
+                    "timeStarted": {
+                      "type": "string",
+                      "description": "timeStarted"
+                    },
+                    "timeFinished": {
+                      "type": "string",
+                      "description": "timeFinished"
+                    },
+                    "deployments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "kind": {
+                            "type": "string",
+                            "description": "kind"
+                          },
+                          "action": {
+                            "type": "string",
+                            "description": "action"
+                          },
+                          "jobState": {
+                            "type": "string",
+                            "description": "jobState"
+                          },
+                          "requestUri": {
+                            "type": "string",
+                            "description": "requestUri"
+                          },
+                          "result": {
+                            "type": "object",
+                            "properties": {
+                              "resources": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "description": "id"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "description": "name"
+                                    },
+                                    "type": {
+                                      "type": "string",
+                                      "description": "type"
+                                    }
+                                  }
+                                },
+                                "description": "resources"
+                              }
+                            },
+                            "description": "result"
+                          },
+                          "history": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "error": {
+                                  "type": "object",
+                                  "properties": {
+                                    "code": {
+                                      "type": "string",
+                                      "description": "code"
+                                    },
+                                    "message": {
+                                      "type": "string",
+                                      "description": "message"
+                                    }
+                                  },
+                                  "description": "error"
+                                }
+                              }
+                            },
+                            "description": "history"
+                          }
+                        }
+                      },
+                      "description": "deployments"
+                    }
+                  },
+                  "description": "properties"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Assignment Operations - Get",
+        "operationId": "GetAssignmentOperations",
+        "description": "Get a blueprint assignment operation.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "assignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint assignment.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "assignmentOperationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint assignment operation."
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "description": "Client API Version.",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    },
+    "/{scope}/providers/Microsoft.Blueprint/blueprints/{blueprintName}/versions/{versionId}/artifacts/{artifactName}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "template": {
+                      "type": "object",
+                      "properties": {
+                        "contentVersion": {
+                          "type": "string",
+                          "description": "contentVersion"
+                        },
+                        "parameters": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountType": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "description": "type"
+                                },
+                                "defaultValue": {
+                                  "type": "string",
+                                  "description": "defaultValue"
+                                },
+                                "allowedValues": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "description": "allowedValues"
+                                },
+                                "metadata": {
+                                  "type": "object",
+                                  "properties": {
+                                    "description": {
+                                      "type": "string",
+                                      "description": "description"
+                                    }
+                                  },
+                                  "description": "metadata"
+                                }
+                              },
+                              "description": "storageAccountType"
+                            }
+                          },
+                          "description": "parameters"
+                        },
+                        "variables": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountName": {
+                              "type": "string",
+                              "description": "storageAccountName"
+                            }
+                          },
+                          "description": "variables"
+                        },
+                        "resources": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "description": "type"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              },
+                              "apiVersion": {
+                                "type": "string",
+                                "description": "apiVersion"
+                              },
+                              "location": {
+                                "type": "string",
+                                "description": "location"
+                              },
+                              "sku": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "description": "name"
+                                  }
+                                },
+                                "description": "sku"
+                              },
+                              "kind": {
+                                "type": "string",
+                                "description": "kind"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {},
+                                "description": "properties"
+                              }
+                            }
+                          },
+                          "description": "resources"
+                        },
+                        "outputs": {
+                          "type": "object",
+                          "properties": {
+                            "storageAccountName": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "description": "type"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "description": "value"
+                                }
+                              },
+                              "description": "storageAccountName"
+                            }
+                          },
+                          "description": "outputs"
+                        }
+                      },
+                      "description": "template"
+                    },
+                    "resourceGroup": {
+                      "type": "string",
+                      "description": "resourceGroup"
+                    },
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "storageAccountType": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          },
+                          "description": "storageAccountType"
+                        }
+                      },
+                      "description": "parameters"
+                    }
+                  },
+                  "description": "properties"
+                },
+                "kind": {
+                  "type": "string",
+                  "description": "kind"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "name"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Published Artifacts - Get",
+        "operationId": "GetPublishedArtifacts",
+        "description": "Get an artifact for a published blueprint definition.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-visibility": "important",
+            "description": "The scope of the resource."
+          },
+          {
+            "name": "blueprintName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint definition.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "versionId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Version of the published blueprint definition",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "artifactName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the blueprint artifact.",
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "2018-11-01-preview",
+            "x-ms-visibility": "internal",
+            "description": "Client API Version."
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "undefined": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "undefined": []
+    }
+  ],
+  "tags": []
+}
